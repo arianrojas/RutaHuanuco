@@ -94,19 +94,21 @@ export default function ImpactSection() {
           })}
         </div>
 
-        {/* Nuestro propósito Box */}
-        <div className="relative rounded-3xl bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-950 text-white p-8 sm:p-10 shadow-2xl border border-emerald-900/50 mb-10">
-          <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800/50 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-widest">
-              <Target className="w-3.5 h-3.5 text-amber-400" />
-              NUESTRO PROPÓSITO
+        {/* Nuestro propósito Container */}
+        <div className="flex flex-col sm:flex-row items-start gap-5 p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:shadow-xl hover:border-emerald-200 transition-all duration-300 group mb-12">
+          <div className="p-4 rounded-2xl bg-white text-emerald-700 group-hover:bg-emerald-700 group-hover:text-white transition-colors duration-300 shrink-0 shadow-sm border border-slate-200">
+            <Target className="w-7 h-7 stroke-[2]" />
+          </div>
+          <div>
+            <div className="inline-flex items-center gap-2 mb-1.5">
+              <span className="text-xs font-black uppercase tracking-widest text-emerald-700">
+                NUESTRO PROPÓSITO
+              </span>
             </div>
-
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors">
               Nuestro propósito
             </h3>
-
-            <p className="text-slate-200 text-base sm:text-lg leading-relaxed font-medium italic">
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
               “Promover una forma de turismo que no solo permita conocer Huánuco, sino también apoyar a quienes producen, emprenden y mantienen viva su identidad local.”
             </p>
           </div>
