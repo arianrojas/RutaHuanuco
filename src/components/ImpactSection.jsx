@@ -1,32 +1,31 @@
 import React from 'react';
-import { Sprout, Users, ShieldCheck, Mountain } from 'lucide-react';
+import { Compass, MapPin, ShoppingBag, Mountain, Target } from 'lucide-react';
 
 export default function ImpactSection() {
   const pillars = [
     {
-      icon: Sprout,
-      title: 'Turismo responsable',
-      desc: 'Cuida hoy, para que las futuras generaciones también disfruten.'
+      icon: Compass,
+      title: 'Descubre',
+      desc: 'Conoce lugares, sabores, naturaleza y cultura de Huánuco.'
     },
     {
-      icon: Users,
-      title: 'Comunidad fuerte',
-      desc: 'Apoyamos el crecimiento de emprendedores locales.'
+      icon: MapPin,
+      title: 'Recorre',
+      desc: 'Organiza rutas según tus intereses, tiempo y presupuesto.'
     },
     {
-      icon: ShieldCheck,
-      title: 'Orgullo regional',
-      desc: 'Juntos hacemos que Huánuco llegue más lejos.'
+      icon: ShoppingBag,
+      title: 'Consume local',
+      desc: 'Conecta con MYPES y emprendimientos huanuqueños.'
     }
   ];
 
   return (
     <section id="impacto" className="relative py-20 bg-white overflow-hidden border-b border-slate-200">
       
-      {/* Background Graphic Accent (Faint Calicanto Bridge Landmark Illustration) */}
+      {/* Background Graphic Accent (Calicanto Bridge Illustration) */}
       <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none select-none max-w-lg hidden lg:block">
         <svg viewBox="0 0 600 300" className="w-full h-auto fill-current text-slate-800">
-          {/* Calicanto stone bridge arch illustration */}
           <path d="M 50 250 Q 150 150 250 250 Q 350 150 450 250 L 550 250 L 550 280 L 50 280 Z" />
           <path d="M 50 240 L 550 240" strokeWidth="8" stroke="currentColor" />
           <circle cx="150" cy="200" r="10" />
@@ -37,26 +36,26 @@ export default function ImpactSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Container */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-16 gap-6">
-          <div className="max-w-2xl">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-12 gap-6">
+          <div className="max-w-3xl">
             {/* Top Brand Pill */}
             <div className="inline-flex items-center gap-2 mb-3">
               <Mountain className="w-4 h-4 text-emerald-700" />
               <span className="text-xs font-black uppercase tracking-widest text-emerald-700">
-                HUÁNUCO TE ESPERA
+                SOBRE EL PROYECTO
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-              Pequeñas acciones, <span className="text-emerald-700">grandes impactos</span>
+              Sobre <span className="text-emerald-700">RUTA HCO</span>
             </h2>
 
-            <p className="text-slate-600 text-base sm:text-lg mt-3">
-              Cada viaje es una oportunidad para conocer, disfrutar y contribuir al desarrollo de nuestra gente.
+            <p className="text-slate-600 text-base sm:text-lg mt-4 leading-relaxed font-medium">
+              RUTA HCO es una plataforma digital que busca conectar a los visitantes con los atractivos, experiencias y emprendimientos locales de Huánuco. Permite explorar lugares, gastronomía, cultura, naturaleza y MYPES locales desde un solo espacio.
             </p>
           </div>
 
-          {/* Right Handwritten Badge: Huánuco siempre sorprende */}
+          {/* Right Handwritten Badge */}
           <div className="lg:text-right shrink-0">
             <div className="inline-block transform rotate-2 hover:rotate-0 transition-transform bg-amber-50/80 p-4 rounded-2xl border border-amber-200 shadow-sm">
               <p className="font-handwriting text-3xl sm:text-4xl text-slate-800 font-bold leading-none">
@@ -70,8 +69,8 @@ export default function ImpactSection() {
           </div>
         </div>
 
-        {/* 3 Value Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* 3 Blocks */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-14">
           {pillars.map((pillar, idx) => {
             const IconComp = pillar.icon;
             return (
@@ -93,6 +92,31 @@ export default function ImpactSection() {
               </div>
             );
           })}
+        </div>
+
+        {/* Nuestro propósito Box */}
+        <div className="relative rounded-3xl bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-950 text-white p-8 sm:p-10 shadow-2xl border border-emerald-900/50 mb-10">
+          <div className="max-w-3xl space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800/50 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-widest">
+              <Target className="w-3.5 h-3.5 text-amber-400" />
+              NUESTRO PROPÓSITO
+            </div>
+
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Nuestro propósito
+            </h3>
+
+            <p className="text-slate-200 text-base sm:text-lg leading-relaxed font-medium italic">
+              “Promover una forma de turismo que no solo permita conocer Huánuco, sino también apoyar a quienes producen, emprenden y mantienen viva su identidad local.”
+            </p>
+          </div>
+        </div>
+
+        {/* Final Phrase */}
+        <div className="text-center pt-2">
+          <p className="font-handwriting text-3xl sm:text-4xl text-emerald-700 font-bold tracking-wide drop-shadow-sm">
+            “Huánuco no solo se visita. Se descubre, se recorre y se vive.”
+          </p>
         </div>
 
       </div>
