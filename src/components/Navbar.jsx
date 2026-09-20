@@ -23,7 +23,7 @@ export default function Navbar({ onOpenSearch, onOpenAuth }) {
         {/* Brand Logo */}
         <a href="#" className="flex items-center group">
           <img
-            src="/images/logo.png"
+            src={scrolled ? '/images/logo2.png' : '/images/logo.png'}
             alt="Ruta HCO"
             className="h-16 sm:h-18 md:h-22 w-auto object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-300"
           />
