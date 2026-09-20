@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import FeatureBar from './components/FeatureBar';
 import CategoryExplorer from './components/CategoryExplorer';
 import BannerCTA from './components/BannerCTA';
+import MypesSection from './components/MypesSection';
 import ImpactSection from './components/ImpactSection';
 import Footer from './components/Footer';
 import DetailModal from './components/DetailModal';
@@ -72,6 +73,11 @@ export default function App() {
         {/* Emerald Banner CTA with Local Artisan & Stats */}
         <BannerCTA 
           onExploreNow={() => handleOpenSearch('')}
+        />
+
+        {/* Local MYPES & Artisans Section */}
+        <MypesSection 
+          onSelectMype={handleSelectCategory}
         />
 
         {/* Huánuco Impact & Values Section */}

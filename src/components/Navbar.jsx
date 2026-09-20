@@ -10,7 +10,7 @@ export default function Navbar({ onOpenSearch, onOpenAuth }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ['hero', 'categorias', 'banner-cta', 'impacto'];
+      const sections = ['hero', 'categorias', 'banner-cta', 'mypes', 'impacto'];
       const scrollPosition = window.scrollY + 220;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -34,18 +34,11 @@ export default function Navbar({ onOpenSearch, onOpenAuth }) {
     { id: 'hero', name: 'Inicio', href: '#hero' },
     { id: 'categorias', name: 'Explorar', href: '#categorias' },
     { id: 'banner-cta', name: 'Rutas', href: '#banner-cta' },
-    { id: 'banner-cta', name: 'MYPES', href: '#banner-cta' },
+    { id: 'mypes', name: 'MYPES', href: '#mypes' },
     { id: 'impacto', name: 'Sobre el proyecto', href: '#impacto' }
   ];
 
-  const isItemActive = (item, index) => {
-    // If multiple items share href '#banner-cta' (Rutas and MYPES)
-    if (item.id === 'banner-cta') {
-      if (activeSection === 'banner-cta') {
-        return index === 2; // Default to Rutas when in banner section
-      }
-      return false;
-    }
+  const isItemActive = (item) => {
     return activeSection === item.id;
   };
 
