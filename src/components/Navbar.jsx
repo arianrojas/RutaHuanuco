@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Search, Menu, X, Compass, Home, MapPin, Store, Sparkles, ChevronRight, LogIn, UserPlus 
+import {
+  Search, Menu, X, Compass, Home, MapPin, Store, Sparkles, ChevronRight, LogIn, UserPlus
 } from 'lucide-react';
 
 export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigateView }) {
@@ -82,11 +82,10 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled || activeView === 'mypes'
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || activeView === 'mypes'
         ? 'bg-white/95 backdrop-blur-md shadow-md py-2'
         : 'bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-transparent py-3.5 text-white'
-    }`}>
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
         {/* Brand Logo */}
@@ -107,13 +106,12 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
                 key={`${item.name}-${index}`}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item)}
-                className={`relative text-sm transition-colors duration-200 ${
-                  active
+                className={`relative text-sm transition-colors duration-200 ${active
                     ? 'text-emerald-500 font-extrabold'
                     : (scrolled || activeView === 'mypes')
                       ? 'text-slate-600 hover:text-emerald-600 font-semibold'
                       : 'text-slate-100 hover:text-emerald-300 font-semibold'
-                }`}
+                  }`}
               >
                 {item.name}
                 {active && (
@@ -129,11 +127,10 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
           {/* Search Trigger Icon */}
           <button
             onClick={onOpenSearch}
-            className={`p-2.5 rounded-full transition-all duration-200 border ${
-              (scrolled || activeView === 'mypes')
+            className={`p-2.5 rounded-full transition-all duration-200 border ${(scrolled || activeView === 'mypes')
                 ? 'bg-slate-100 hover:bg-emerald-50 border-slate-200 text-slate-700 hover:text-emerald-600'
                 : 'bg-white/10 hover:bg-white/20 border-white/20 text-white hover:scale-105'
-            }`}
+              }`}
             title="Buscar experiencias y MYPES"
           >
             <Search className="w-4 h-4" />
@@ -142,11 +139,10 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
           {/* Iniciar Sesión */}
           <button
             onClick={() => onOpenAuth('login')}
-            className={`px-4 py-2 text-sm font-semibold rounded-full border transition-all duration-200 ${
-              (scrolled || activeView === 'mypes')
+            className={`px-4 py-2 text-sm font-semibold rounded-full border transition-all duration-200 ${(scrolled || activeView === 'mypes')
                 ? 'border-emerald-600 text-emerald-700 hover:bg-emerald-50'
                 : 'border-white/40 text-white hover:bg-white/10'
-            }`}
+              }`}
           >
             Iniciar sesión
           </button>
@@ -164,11 +160,10 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={onOpenSearch}
-            className={`px-3 py-2 rounded-xl flex items-center gap-1.5 transition-all ${
-              (scrolled || activeView === 'mypes') 
-                ? 'bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 border border-slate-200/80 shadow-sm' 
+            className={`px-3 py-2 rounded-xl flex items-center gap-1.5 transition-all ${(scrolled || activeView === 'mypes')
+                ? 'bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 border border-slate-200/80 shadow-sm'
                 : 'bg-white/15 text-white hover:bg-white/25 border border-white/20 backdrop-blur-sm'
-            }`}
+              }`}
             aria-label="Buscar"
           >
             <Search className="w-4 h-4 text-emerald-400" />
@@ -176,11 +171,10 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`p-2 rounded-xl transition-all ${
-              (scrolled || activeView === 'mypes') 
-                ? 'bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-200/80 shadow-sm' 
+            className={`p-2 rounded-xl transition-all ${(scrolled || activeView === 'mypes')
+                ? 'bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-200/80 shadow-sm'
                 : 'bg-white/15 text-white hover:bg-white/25 border border-white/20 backdrop-blur-sm'
-            }`}
+              }`}
             aria-label="Menú principal"
           >
             {mobileMenuOpen ? <X className="w-5 h-5 text-emerald-400" /> : <Menu className="w-5 h-5" />}
@@ -213,11 +207,10 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
                   key={`mobile-${item.name}-${index}`}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-2xl transition-all duration-200 ${
-                    active
+                  className={`flex items-center justify-between px-4 py-3 rounded-2xl transition-all duration-200 ${active
                       ? 'bg-emerald-500/15 text-emerald-400 font-bold border border-emerald-500/30 shadow-sm'
                       : 'text-slate-200 hover:bg-slate-800/60 hover:text-white font-medium'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3.5">
                     <div className={`p-2 rounded-xl ${active ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-800 text-slate-400'}`}>

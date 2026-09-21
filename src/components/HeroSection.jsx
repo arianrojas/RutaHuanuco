@@ -46,8 +46,8 @@ export default function HeroSection({ onSearch, onSelectCategory }) {
         </div>
       </div>
 
-      {/* Hero Center Main Content (Positioned higher on mobile) */}
-      <div className="relative z-10 max-w-4xl mx-auto w-full text-center my-auto py-0 sm:py-2 -mt-10 sm:mt-0">
+      {/* Hero Center Main Content (Perfectly centered vertically & horizontally) */}
+      <div className="relative z-10 max-w-4xl mx-auto w-full text-center my-auto py-4 sm:py-6 flex flex-col items-center justify-center">
 
         {/* Main Heading */}
         <h1 className="relative text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-2 sm:mb-3 drop-shadow-xl">
