@@ -160,29 +160,30 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
           </button>
         </div>
 
-        {/* Mobile Menu Toggle Button */}
+        {/* Mobile Actions & Menu Toggle Button */}
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={onOpenSearch}
-            className={`hidden sm:flex p-2.5 rounded-full transition-all ${
+            className={`px-3 py-2 rounded-xl flex items-center gap-1.5 transition-all ${
               (scrolled || activeView === 'mypes') 
-                ? 'bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-600' 
-                : 'bg-white/15 text-white hover:bg-white/25'
+                ? 'bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 border border-slate-200/80 shadow-sm' 
+                : 'bg-white/15 text-white hover:bg-white/25 border border-white/20 backdrop-blur-sm'
             }`}
             aria-label="Buscar"
           >
-            <Search className="w-5 h-5" />
+            <Search className="w-4 h-4 text-emerald-400" />
+            <span className="text-xs font-bold">Buscar</span>
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`p-2.5 rounded-xl transition-all ${
+            className={`p-2 rounded-xl transition-all ${
               (scrolled || activeView === 'mypes') 
-                ? 'bg-slate-100 text-slate-800 hover:bg-slate-200' 
-                : 'bg-white/15 text-white hover:bg-white/25'
+                ? 'bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-200/80 shadow-sm' 
+                : 'bg-white/15 text-white hover:bg-white/25 border border-white/20 backdrop-blur-sm'
             }`}
             aria-label="Menú principal"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-emerald-400" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 text-emerald-400" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>

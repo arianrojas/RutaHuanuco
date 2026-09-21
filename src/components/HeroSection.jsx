@@ -20,7 +20,7 @@ export default function HeroSection({ onSearch, onSelectCategory }) {
   ];
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col justify-between pt-20 pb-6 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex flex-col justify-between pt-16 sm:pt-20 pb-6 px-4 sm:px-6 lg:px-8 overflow-hidden">
 
       {/* Background Hero Image & Overlay Gradient */}
       <div className="absolute inset-0 z-0">
@@ -35,24 +35,22 @@ export default function HeroSection({ onSearch, onSelectCategory }) {
       </div>
 
       {/* Decorative Handwritten Slogan (Top Left Callout) */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full pt-2">
+      <div className="relative z-10 max-w-7xl mx-auto w-full pt-1 sm:pt-2">
         <div className="inline-block transform -rotate-2 hover:rotate-0 transition-transform">
-          <div className="font-handwriting text-xl sm:text-2xl text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] tracking-wide">
+          <div className="font-handwriting text-base sm:text-2xl text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] tracking-wide">
             Más que un viaje, una conexión real con nuestra tierra
           </div>
-          <svg viewBox="0 0 200 20" className="w-36 h-3 text-amber-400 stroke-current fill-none -mt-0.5">
+          <svg viewBox="0 0 200 20" className="w-28 sm:w-36 h-2.5 sm:h-3 text-amber-400 stroke-current fill-none -mt-0.5">
             <path d="M5 12 Q 100 2, 195 14" strokeWidth="3" strokeLinecap="round" />
           </svg>
         </div>
       </div>
 
-      {/* Hero Center Main Content */}
-      <div className="relative z-10 max-w-4xl mx-auto w-full text-center my-auto py-2">
-
-
+      {/* Hero Center Main Content (Positioned higher on mobile) */}
+      <div className="relative z-10 max-w-4xl mx-auto w-full text-center my-auto py-0 sm:py-2 -mt-10 sm:mt-0">
 
         {/* Main Heading */}
-        <h1 className="relative text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-3 drop-shadow-xl">
+        <h1 className="relative text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-2 sm:mb-3 drop-shadow-xl">
           Descubre <span className="relative inline-block text-white">
             Huánuco
             {/* Hand-drawn yellow accent curve mark above/beside title */}
@@ -64,7 +62,7 @@ export default function HeroSection({ onSearch, onSelectCategory }) {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg text-slate-100 font-medium max-w-2xl mx-auto mb-5 drop-shadow-md">
+        <p className="text-sm sm:text-lg text-slate-100 font-medium max-w-2xl mx-auto mb-4 sm:mb-5 drop-shadow-md">
           Paisajes que inspiran, sabores que enamoran, comunidades que hacen la diferencia.
         </p>
 
