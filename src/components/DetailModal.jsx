@@ -11,6 +11,54 @@ export default function DetailModal({ type, data, onClose, onSelectCategory }) {
   // Mock list of registered MYPES & tourist spots in Huánuco
   const mockItems = [
     {
+      id: 101,
+      name: 'Textilería Tradicional Doña Isabel',
+      category: 'artesanias',
+      rating: 4.9,
+      reviews: 48,
+      location: 'Ambo, Huánuco',
+      phone: '+51 987 654 321',
+      desc: 'Maestra tejedora con más de 30 años preservando técnicas ancestrales de hilado y mantas 100% lana de ovino con tintes naturales de la región.',
+      image: '/images/artisan.jpg',
+      badge: 'Artesano Destacado'
+    },
+    {
+      id: 102,
+      name: 'Finca Café & Cacao Don Tomás',
+      category: 'productos',
+      rating: 5.0,
+      reviews: 62,
+      location: 'Tingo María, Huánuco',
+      phone: '+51 954 888 999',
+      desc: 'Productor galardonado de café de altura orgánico (1,800 msnm) y chocolates artesanales de cacao fino de aroma.',
+      image: '/images/cafe.png',
+      badge: 'Agroindustria Local'
+    },
+    {
+      id: 103,
+      name: 'Taller de Cerámica Arte Kotosh',
+      category: 'artesanias',
+      rating: 4.8,
+      reviews: 35,
+      location: 'Huánuco Ciudad',
+      phone: '+51 999 111 222',
+      desc: 'Réplicas culturales y tallados artesanales en piedra y cerámica de las Manos Cruzadas de Kotosh.',
+      image: '/images/kotosh.png',
+      badge: 'Identidad Cultural'
+    },
+    {
+      id: 104,
+      name: 'Recreo Campestre Tradición Huanuqueña',
+      category: 'gastronomia',
+      rating: 4.9,
+      reviews: 89,
+      location: 'Pillco Marca, Huánuco',
+      phone: '+51 912 345 678',
+      desc: 'Cocina autóctona campestre con insumos de la chacra a la mesa y la receta tradicional de la pachamanca huanuqueña.',
+      image: '/images/gastronomia.jpg',
+      badge: 'Gastronomía Típica'
+    },
+    {
       id: 1,
       name: 'Recreo Campestre El Bosque',
       category: 'gastronomia',
@@ -46,19 +94,6 @@ export default function DetailModal({ type, data, onClose, onSelectCategory }) {
       image: '/images/kotosh.png',
       badge: 'Histórico'
     },
-    {
-      id: 4,
-      name: 'Café de Altura Huanucoqueño',
-      category: 'productos',
-      rating: 5.0,
-      reviews: 215,
-      location: 'Tingo María / Huánuco',
-      phone: '+51 954 888 999',
-      desc: 'Café orgánico especial de aroma intenso producido a más de 1,800 msnm por cooperativas locales.',
-      image: '/images/cafe.png',
-      badge: 'Orgánico'
-    },
-
     {
       id: 6,
       name: 'Laguna de Lauricocha & Cañón',
@@ -108,10 +143,14 @@ export default function DetailModal({ type, data, onClose, onSelectCategory }) {
             </div>
             <div>
               <h3 className="text-xl font-bold">
-                {type === 'auth' ? (authType === 'login' ? 'Iniciar Sesión' : 'Crear Cuenta en Consume Huánuco') : 'Explora MYPES & Rutas en Huánuco'}
+                {type === 'auth' 
+                  ? (authType === 'login' ? 'Iniciar Sesión' : 'Crear Cuenta en Consume Huánuco') 
+                  : (type === 'mypes' ? 'Directorio Oficial de MYPES & Artesanos' : 'Explora MYPES & Rutas en Huánuco')}
               </h3>
               <p className="text-xs text-emerald-200">
-                {type === 'auth' ? 'Sé parte del crecimiento turístico local' : 'Conecta directamente con emprendedores de nuestra región'}
+                {type === 'auth' 
+                  ? 'Sé parte del crecimiento turístico local' 
+                  : (type === 'mypes' ? 'Perfiles referenciales y contacto directo con productores de Huánuco' : 'Conecta directamente con emprendedores de nuestra región')}
               </p>
             </div>
           </div>

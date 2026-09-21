@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import DetailModal from './components/DetailModal';
 
 export default function App() {
+  const [activeView, setActiveView] = useState('home'); // 'home' | 'mypes'
+
   const [modalState, setModalState] = useState({
     isOpen: false,
     type: null, // 'search' | 'auth'
@@ -25,6 +27,11 @@ export default function App() {
   };
 
   const handleSelectCategory = (categoryId) => {
+    if (categoryId === 'mypes') {
+      setActiveView('mypes');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     setModalState({
       isOpen: true,
       type: 'search',
@@ -51,37 +58,49 @@ export default function App() {
       <Navbar 
         onOpenSearch={() => handleOpenSearch('')}
         onOpenAuth={handleOpenAuth}
+        activeView={activeView}
+        onNavigateView={(view) => setActiveView(view)}
       />
 
       {/* Main Content Areas */}
       <main className="flex-1">
-        {/* Hero Banner Section */}
-        <HeroSection 
-          onSearch={(query) => handleOpenSearch(query)}
-          onSelectCategory={handleSelectCategory}
-        />
+        {activeView === 'home' ? (
+          <>
+            {/* Hero Banner Section */}
+            <HeroSection 
+              onSearch={(query) => handleOpenSearch(query)}
+              onSelectCategory={handleSelectCategory}
+            />
 
-        {/* 4 Feature Highlights Bar */}
-        <FeatureBar />
+            {/* 4 Feature Highlights Bar */}
+            <FeatureBar />
 
-        {/* Category Explorer Grid */}
-        <CategoryExplorer 
-          onSelectCategory={handleSelectCategory}
-          onOpenAllCategories={() => handleOpenSearch('')}
-        />
+            {/* Category Explorer Grid */}
+            <CategoryExplorer 
+              onSelectCategory={handleSelectCategory}
+              onOpenAllCategories={() => handleOpenSearch('')}
+            />
 
-        {/* Emerald Banner CTA with Local Artisan & Stats */}
-        <BannerCTA 
-          onExploreNow={() => handleOpenSearch('')}
-        />
+            {/* Emerald Banner CTA with Local Artisan & Stats */}
+            <BannerCTA 
+              onExploreNow={() => {
+                setActiveView('mypes');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            />
 
-        {/* Local MYPES & Artisans Section */}
-        <MypesSection 
-          onSelectMype={handleSelectCategory}
-        />
-
-        {/* Huánuco Impact & Values Section */}
-        <ImpactSection />
+            {/* Huánuco Impact & Values Section */}
+            <ImpactSection />
+          </>
+        ) : (
+          /* Dedicated Standalone MYPES Page View */
+          <MypesSection 
+            onBackToHome={() => {
+              setActiveView('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }} 
+          />
+        )}
       </main>
 
       {/* Footer */}
