@@ -205,17 +205,17 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-900/98 backdrop-blur-2xl border-b border-emerald-500/20 text-white px-5 py-6 space-y-5 animate-fadeIn shadow-2xl">
+        <div className="md:hidden bg-emerald-50/98 backdrop-blur-2xl border-b border-emerald-200/80 text-slate-800 px-5 py-6 space-y-5 animate-fadeIn shadow-2xl">
           {/* Quick Search Bar */}
           <button
             onClick={() => { setMobileMenuOpen(false); onOpenSearch(); }}
-            className="w-full flex items-center justify-between px-4 py-3 bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 rounded-2xl text-slate-300 text-sm font-medium transition-all shadow-inner group"
+            className="w-full flex items-center justify-between px-4 py-3 bg-white hover:bg-emerald-100/60 border border-emerald-200/80 rounded-2xl text-slate-700 text-sm font-medium transition-all shadow-sm group"
           >
             <div className="flex items-center gap-3">
-              <Search className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
-              <span>Buscar experiencias o MYPES...</span>
+              <Search className="w-4 h-4 text-emerald-600 group-hover:scale-110 transition-transform" />
+              <span className="text-slate-700">Buscar experiencias o MYPES...</span>
             </div>
-            <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Buscar</span>
+            <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-700 text-white">Buscar</span>
           </button>
 
           {/* Navigation Items List */}
@@ -229,34 +229,34 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item)}
                   className={`flex items-center justify-between px-4 py-3 rounded-2xl transition-all duration-200 ${active
-                    ? 'bg-emerald-500/15 text-emerald-400 font-bold border border-emerald-500/30 shadow-sm'
-                    : 'text-slate-200 hover:bg-slate-800/60 hover:text-white font-medium'
+                    ? 'bg-emerald-700 text-white font-bold shadow-md shadow-emerald-900/20'
+                    : 'text-slate-700 hover:bg-emerald-100/60 hover:text-emerald-900 font-semibold'
                     }`}
                 >
                   <div className="flex items-center gap-3.5">
-                    <div className={`p-2 rounded-xl ${active ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-800 text-slate-400'}`}>
+                    <div className={`p-2 rounded-xl ${active ? 'bg-emerald-800 text-white' : 'bg-emerald-100/80 text-emerald-800'}`}>
                       <Icon className="w-4 h-4" />
                     </div>
                     <span className="text-base">{item.name}</span>
                   </div>
-                  <ChevronRight className={`w-4 h-4 transition-transform ${active ? 'text-emerald-400 translate-x-0.5' : 'text-slate-600'}`} />
+                  <ChevronRight className={`w-4 h-4 transition-transform ${active ? 'text-white translate-x-0.5' : 'text-slate-400'}`} />
                 </a>
               );
             })}
           </nav>
 
           {/* Auth Action Buttons */}
-          <div className="pt-4 border-t border-slate-800/80 flex flex-col gap-2.5">
+          <div className="pt-4 border-t border-emerald-200/60 flex flex-col gap-2.5">
             <button
               onClick={() => { setMobileMenuOpen(false); onOpenAuth('login'); }}
-              className="w-full py-3 px-4 flex items-center justify-center gap-2 font-semibold border border-slate-700/80 hover:border-emerald-500/50 bg-slate-800/70 hover:bg-slate-800 text-slate-200 hover:text-emerald-400 rounded-2xl transition-all shadow-sm"
+              className="w-full py-3 px-4 flex items-center justify-center gap-2 font-bold border border-emerald-600 text-emerald-800 bg-white hover:bg-emerald-100/60 rounded-2xl transition-all shadow-sm"
             >
-              <LogIn className="w-4 h-4 text-emerald-400" />
+              <LogIn className="w-4 h-4 text-emerald-700" />
               <span>Iniciar sesión</span>
             </button>
             <button
               onClick={() => { setMobileMenuOpen(false); onOpenAuth('register'); }}
-              className="w-full py-3 px-4 flex items-center justify-center gap-2 font-bold bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-2xl shadow-lg shadow-emerald-950/40 transition-all hover:scale-[1.01] active:scale-[0.99]"
+              className="w-full py-3 px-4 flex items-center justify-center gap-2 font-bold bg-emerald-700 hover:bg-emerald-800 text-white rounded-2xl shadow-md transition-all hover:scale-[1.01] active:scale-[0.99]"
             >
               <UserPlus className="w-4 h-4" />
               <span>Registrarse</span>
@@ -265,7 +265,7 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
 
           {/* Footer badge */}
           <div className="pt-1 text-center">
-            <p className="text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+            <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
               Ruta HCO · Plataforma Turística & MYPES
             </p>
           </div>
