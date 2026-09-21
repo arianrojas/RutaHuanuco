@@ -68,10 +68,10 @@ export default function HeroSection({ onSearch, onSelectCategory }) {
           Paisajes que inspiran, sabores que enamoran, comunidades que hacen la diferencia.
         </p>
 
-        {/* Main Search Bar */}
+        {/* Main Search Bar (Hidden on Mobile) */}
         <form
           onSubmit={handleSubmit}
-          className="relative max-w-2xl mx-auto mb-6 bg-white/95 backdrop-blur-md p-1.5 sm:p-2 rounded-2xl sm:rounded-full shadow-2xl flex flex-col sm:flex-row items-center gap-2 border border-white/50"
+          className="hidden sm:flex relative max-w-2xl mx-auto mb-6 bg-white/95 backdrop-blur-md p-1.5 sm:p-2 rounded-2xl sm:rounded-full shadow-2xl flex-col sm:flex-row items-center gap-2 border border-white/50"
         >
           <div className="flex items-center gap-3 pl-4 pr-2 w-full py-1">
             <Search className="w-5 h-5 text-slate-400 shrink-0" />
@@ -91,20 +91,20 @@ export default function HeroSection({ onSearch, onSelectCategory }) {
           </button>
         </form>
 
-        {/* Quick Category Pill Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 max-w-3xl mx-auto">
+        {/* Quick Category Pill Cards (5 in a single row on mobile) */}
+        <div className="grid grid-cols-5 gap-1 sm:gap-2 max-w-3xl mx-auto w-full">
           {quickFilters.map((filter) => {
             const IconComponent = filter.icon;
             return (
               <button
                 key={filter.id}
                 onClick={() => onSelectCategory && onSelectCategory(filter.id)}
-                className="group flex flex-col items-center justify-center p-2 sm:p-2.5 rounded-xl bg-slate-200/30 hover:bg-slate-100/50 backdrop-blur-md border border-white/40 hover:border-emerald-500/60 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+                className="group flex flex-col items-center justify-center p-1 sm:p-2.5 rounded-xl bg-slate-200/30 hover:bg-slate-100/50 backdrop-blur-md border border-white/40 hover:border-emerald-500/60 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl w-full"
               >
-                <div className="w-8 h-8 rounded-lg bg-emerald-100/90 group-hover:bg-emerald-800 flex items-center justify-center text-emerald-900 group-hover:text-white mb-1 transition-colors shadow-sm">
-                  <IconComponent className="w-4 h-4" />
+                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-emerald-100/90 group-hover:bg-emerald-800 flex items-center justify-center text-emerald-900 group-hover:text-white mb-0.5 sm:mb-1 transition-colors shadow-sm shrink-0">
+                  <IconComponent className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </div>
-                <span className="text-[11px] sm:text-xs font-bold text-slate-900 group-hover:text-emerald-950 tracking-tight">
+                <span className="text-[9px] sm:text-xs font-bold text-slate-900 group-hover:text-emerald-950 tracking-tight text-center leading-tight truncate w-full">
                   {filter.label}
                 </span>
               </button>

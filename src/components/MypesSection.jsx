@@ -167,8 +167,8 @@ export default function MypesSection({ onBackToHome }) {
               </p>
             </div>
 
-            {/* Quick Highlights Box - Clean Typography & Stats */}
-            <div className="lg:col-span-4 bg-white/5 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
+            {/* Quick Highlights Box - Clean Typography & Stats (Hidden on mobile) */}
+            <div className="hidden md:block lg:col-span-4 bg-white/5 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
               <div>
                 <span className="text-3xl sm:text-4xl font-black text-amber-300 block tracking-tight">
                   100% Local

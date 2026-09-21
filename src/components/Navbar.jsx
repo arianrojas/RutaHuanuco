@@ -164,7 +164,7 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={onOpenSearch}
-            className={`p-2.5 rounded-full transition-all ${
+            className={`hidden sm:flex p-2.5 rounded-full transition-all ${
               (scrolled || activeView === 'mypes') 
                 ? 'bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-600' 
                 : 'bg-white/15 text-white hover:bg-white/25'
