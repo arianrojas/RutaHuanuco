@@ -5,6 +5,7 @@ import FeatureBar from './components/FeatureBar';
 import CategoryExplorer from './components/CategoryExplorer';
 import BannerCTA from './components/BannerCTA';
 import MypesSection from './components/MypesSection';
+import Rutas from './components/Rutas';
 import ImpactSection from './components/ImpactSection';
 import Footer from './components/Footer';
 import DetailModal from './components/DetailModal';
@@ -80,6 +81,9 @@ export default function App() {
               onSelectCategory={handleSelectCategory}
               onOpenAllCategories={() => handleOpenSearch('')}
             />
+
+            {/* Rutas Turísticas */}
+            <Rutas />
 
             {/* Emerald Banner CTA with Local Artisan & Stats */}
             <BannerCTA 
