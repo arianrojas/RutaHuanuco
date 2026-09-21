@@ -34,7 +34,7 @@ export default function Navbar({ onOpenSearch, onOpenAuth }) {
           {[
             { name: 'Inicio', href: '#hero', active: true },
             { name: 'Explorar', href: '#categorias' },
-            { name: 'Rutas', href: '#banner-cta' },
+            { name: 'Rutas', href: '#rutas' },
             { name: 'MYPES', href: '#banner-cta' },
             { name: 'Sobre el proyecto', href: '#impacto' }
           ].map((item) => (
@@ -113,7 +113,7 @@ export default function Navbar({ onOpenSearch, onOpenAuth }) {
           <nav className="flex flex-col space-y-3">
             <a href="#hero" onClick={() => setMobileMenuOpen(false)} className="text-emerald-400 font-bold text-lg">Inicio</a>
             <a href="#categorias" onClick={() => setMobileMenuOpen(false)} className="text-slate-200 hover:text-emerald-300 py-1">Explorar Categorías</a>
-            <a href="#banner-cta" onClick={() => setMobileMenuOpen(false)} className="text-slate-200 hover:text-emerald-300 py-1">Rutas Turísticas</a>
+            <a href="#rutas" onClick={() => setMobileMenuOpen(false)} className="text-slate-200 hover:text-emerald-300 py-1">Rutas Turísticas</a>
             <a href="#banner-cta" onClick={() => setMobileMenuOpen(false)} className="text-slate-200 hover:text-emerald-300 py-1">MYPES Locales</a>
             <a href="#impacto" onClick={() => setMobileMenuOpen(false)} className="text-slate-200 hover:text-emerald-300 py-1">Sobre el proyecto</a>
           </nav>
