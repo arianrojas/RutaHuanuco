@@ -189,8 +189,7 @@ return (
             );
           })}
         </nav>
-          </nav>
-          <div className="pt-4 border-t border-slate-800 flex flex-col gap-2">
+        <div className="pt-4 border-t border-slate-800 flex flex-col gap-2">
             <button
               onClick={() => { setMobileMenuOpen(false); onOpenAuth('login'); }}
               className="w-full py-2.5 text-center font-semibold border border-emerald-500 text-emerald-400 rounded-xl"
