@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Search, Menu, X, Compass, Home, MapPin, Store, Sparkles, ChevronRight, LogIn, UserPlus
+import { 
+  Search, Menu, X, Compass, Home, MapPin, Store, Sparkles, ChevronRight, LogIn, UserPlus, Award 
 } from 'lucide-react';
 
 export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigateView }) {
@@ -36,9 +36,10 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
 
   const navItems = [
     { id: 'hero', name: 'Inicio', href: '#hero', icon: Home },
-    { id: 'categorias', name: 'Explorar', href: '#categorias', icon: Compass },
+    { id: 'explorar', name: 'Explorar', href: '#explorar', icon: Compass },
     { id: 'rutas', name: 'Rutas', href: '#rutas', icon: MapPin },
     { id: 'mypes', name: 'MYPES', href: '#mypes', icon: Store },
+    { id: 'pasaporte', name: 'Pasaporte', href: '#pasaporte', icon: Award },
     { id: 'impacto', name: 'Sobre el proyecto', href: '#impacto', icon: Sparkles }
   ];
 
@@ -48,6 +49,15 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
 
     if (item.id === 'mypes') {
       if (onNavigateView) onNavigateView('mypes');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (item.id === 'explorar') {
+      if (onNavigateView) onNavigateView('explorar');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (item.id === 'rutas') {
+      if (onNavigateView) onNavigateView('rutas');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (item.id === 'pasaporte') {
+      if (onNavigateView) onNavigateView('pasaporte');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       if (activeView !== 'home') {
@@ -78,20 +88,31 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
     if (activeView === 'mypes') {
       return item.id === 'mypes';
     }
+    if (activeView === 'explorar') {
+      return item.id === 'explorar';
+    }
+    if (activeView === 'rutas') {
+      return item.id === 'rutas';
+    }
+    if (activeView === 'pasaporte') {
+      return item.id === 'pasaporte';
+    }
     return activeSection === item.id;
   };
 
+  const isStandaloneView = activeView === 'mypes' || activeView === 'explorar' || activeView === 'rutas' || activeView === 'pasaporte';
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || activeView === 'mypes'
-        ? 'bg-white/95 backdrop-blur-md shadow-md py-2'
-        : 'bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-transparent py-3.5 text-white'
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || isStandaloneView
+      ? 'bg-white/95 backdrop-blur-md shadow-md py-2'
+      : 'bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-transparent py-3.5 text-white'
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
         {/* Brand Logo */}
         <a href="#" onClick={handleLogoClick} className="flex items-center group">
           <img
-            src={(scrolled || activeView === 'mypes') ? '/images/logo2.png' : '/images/logo.png'}
+            src={(scrolled || isStandaloneView) ? '/images/logo2.png' : '/images/logo.png'}
             alt="Ruta HCO"
             className="h-14 sm:h-16 md:h-22 w-auto object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-300"
           />
@@ -107,10 +128,10 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item)}
                 className={`relative text-sm transition-colors duration-200 ${active
-                    ? 'text-emerald-500 font-extrabold'
-                    : (scrolled || activeView === 'mypes')
-                      ? 'text-slate-600 hover:text-emerald-600 font-semibold'
-                      : 'text-slate-100 hover:text-emerald-300 font-semibold'
+                  ? 'text-emerald-500 font-extrabold'
+                  : (scrolled || isStandaloneView)
+                    ? 'text-slate-600 hover:text-emerald-600 font-semibold'
+                    : 'text-slate-100 hover:text-emerald-300 font-semibold'
                   }`}
               >
                 {item.name}
@@ -127,9 +148,9 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
           {/* Search Trigger Icon */}
           <button
             onClick={onOpenSearch}
-            className={`p-2.5 rounded-full transition-all duration-200 border ${(scrolled || activeView === 'mypes')
-                ? 'bg-slate-100 hover:bg-emerald-50 border-slate-200 text-slate-700 hover:text-emerald-600'
-                : 'bg-white/10 hover:bg-white/20 border-white/20 text-white hover:scale-105'
+            className={`p-2.5 rounded-full transition-all duration-200 border ${(scrolled || isStandaloneView)
+              ? 'bg-slate-100 hover:bg-emerald-50 border-slate-200 text-slate-700 hover:text-emerald-600'
+              : 'bg-white/10 hover:bg-white/20 border-white/20 text-white hover:scale-105'
               }`}
             title="Buscar experiencias y MYPES"
           >
@@ -139,9 +160,9 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
           {/* Iniciar Sesión */}
           <button
             onClick={() => onOpenAuth('login')}
-            className={`px-4 py-2 text-sm font-semibold rounded-full border transition-all duration-200 ${(scrolled || activeView === 'mypes')
-                ? 'border-emerald-600 text-emerald-700 hover:bg-emerald-50'
-                : 'border-white/40 text-white hover:bg-white/10'
+            className={`px-4 py-2 text-sm font-semibold rounded-full border transition-all duration-200 ${(scrolled || isStandaloneView)
+              ? 'border-emerald-600 text-emerald-700 hover:bg-emerald-50'
+              : 'border-white/40 text-white hover:bg-white/10'
               }`}
           >
             Iniciar sesión
@@ -160,9 +181,9 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={onOpenSearch}
-            className={`px-3 py-2 rounded-xl flex items-center gap-1.5 transition-all ${(scrolled || activeView === 'mypes')
-                ? 'bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 border border-slate-200/80 shadow-sm'
-                : 'bg-white/15 text-white hover:bg-white/25 border border-white/20 backdrop-blur-sm'
+            className={`px-3 py-2 rounded-xl flex items-center gap-1.5 transition-all ${(scrolled || isStandaloneView)
+              ? 'bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 border border-slate-200/80 shadow-sm'
+              : 'bg-white/15 text-white hover:bg-white/25 border border-white/20 backdrop-blur-sm'
               }`}
             aria-label="Buscar"
           >
@@ -171,9 +192,9 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`p-2 rounded-xl transition-all ${(scrolled || activeView === 'mypes')
-                ? 'bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-200/80 shadow-sm'
-                : 'bg-white/15 text-white hover:bg-white/25 border border-white/20 backdrop-blur-sm'
+            className={`p-2 rounded-xl transition-all ${(scrolled || isStandaloneView)
+              ? 'bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-200/80 shadow-sm'
+              : 'bg-white/15 text-white hover:bg-white/25 border border-white/20 backdrop-blur-sm'
               }`}
             aria-label="Menú principal"
           >
@@ -208,8 +229,8 @@ export default function Navbar({ onOpenSearch, onOpenAuth, activeView, onNavigat
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item)}
                   className={`flex items-center justify-between px-4 py-3 rounded-2xl transition-all duration-200 ${active
-                      ? 'bg-emerald-500/15 text-emerald-400 font-bold border border-emerald-500/30 shadow-sm'
-                      : 'text-slate-200 hover:bg-slate-800/60 hover:text-white font-medium'
+                    ? 'bg-emerald-500/15 text-emerald-400 font-bold border border-emerald-500/30 shadow-sm'
+                    : 'text-slate-200 hover:bg-slate-800/60 hover:text-white font-medium'
                     }`}
                 >
                   <div className="flex items-center gap-3.5">

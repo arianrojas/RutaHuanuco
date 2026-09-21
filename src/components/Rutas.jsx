@@ -48,7 +48,7 @@ const featuredRoutes = [
   },
 ];
 
-export default function Rutas() {
+export default function Rutas({ onBackToHome }) {
   const [origin, setOrigin] = useState('');
   const [date, setDate] = useState('');
   const [duration, setDuration] = useState('');
@@ -101,11 +101,28 @@ export default function Rutas() {
   };
 
   return (
-    <section id="rutas" className="relative overflow-hidden bg-[#f7f6f1] py-20 sm:py-24">
+    <section id="rutas" className="relative overflow-hidden bg-[#f7f6f1] pt-28 sm:pt-36 pb-20 sm:pb-24 min-h-screen">
       <div className="absolute -right-32 top-12 h-72 w-72 rounded-full bg-emerald-200/35 blur-3xl" />
       <div className="absolute -left-28 bottom-0 h-64 w-64 rounded-full bg-amber-100/70 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Back Button & Top Navigation Bar */}
+        {onBackToHome && (
+          <div className="flex items-center justify-between mb-8">
+            <button
+              onClick={onBackToHome}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-emerald-50 hover:text-emerald-700 transition-all"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span>Volver al Inicio</span>
+            </button>
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-xs uppercase tracking-wider border border-emerald-200">
+              Rutas Turísticas
+            </span>
+          </div>
+        )}
+
         <div className="max-w-3xl">
           <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-emerald-700">
             Planifica a tu manera

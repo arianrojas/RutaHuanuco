@@ -5,13 +5,15 @@ import FeatureBar from './components/FeatureBar';
 import CategoryExplorer from './components/CategoryExplorer';
 import BannerCTA from './components/BannerCTA';
 import MypesSection from './components/MypesSection';
+import ExplorarSection from './components/ExplorarSection';
+import PasaporteSection from './components/PasaporteSection';
 import Rutas from './components/Rutas';
 import ImpactSection from './components/ImpactSection';
 import Footer from './components/Footer';
 import DetailModal from './components/DetailModal';
 
 export default function App() {
-  const [activeView, setActiveView] = useState('home'); // 'home' | 'mypes'
+  const [activeView, setActiveView] = useState('home'); // 'home' | 'mypes' | 'explorar' | 'rutas' | 'pasaporte'
 
   const [modalState, setModalState] = useState({
     isOpen: false,
@@ -60,12 +62,15 @@ export default function App() {
         onOpenSearch={() => handleOpenSearch('')}
         onOpenAuth={handleOpenAuth}
         activeView={activeView}
-        onNavigateView={(view) => setActiveView(view)}
+        onNavigateView={(view) => {
+          setActiveView(view);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
       />
 
       {/* Main Content Areas */}
       <main className="flex-1">
-        {activeView === 'home' ? (
+        {activeView === 'home' && (
           <>
             {/* Hero Banner Section */}
             <HeroSection 
@@ -82,9 +87,6 @@ export default function App() {
               onOpenAllCategories={() => handleOpenSearch('')}
             />
 
-            {/* Rutas Turísticas */}
-            <Rutas />
-
             {/* Emerald Banner CTA with Local Artisan & Stats */}
             <BannerCTA 
               onExploreNow={() => {
@@ -96,13 +98,47 @@ export default function App() {
             {/* Huánuco Impact & Values Section */}
             <ImpactSection />
           </>
-        ) : (
+        )}
+
+        {activeView === 'mypes' && (
           /* Dedicated Standalone MYPES Page View */
           <MypesSection 
             onBackToHome={() => {
               setActiveView('home');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }} 
+          />
+        )}
+
+        {activeView === 'explorar' && (
+          /* Dedicated Standalone Explorar Route View */
+          <ExplorarSection 
+            onBackToHome={() => {
+              setActiveView('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onOpenAuth={handleOpenAuth}
+          />
+        )}
+
+        {activeView === 'rutas' && (
+          /* Dedicated Standalone Rutas Planner View */
+          <Rutas 
+            onBackToHome={() => {
+              setActiveView('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          />
+        )}
+
+        {activeView === 'pasaporte' && (
+          /* Dedicated Standalone Pasaporte View */
+          <PasaporteSection 
+            onBackToHome={() => {
+              setActiveView('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            onOpenAuth={handleOpenAuth}
           />
         )}
       </main>

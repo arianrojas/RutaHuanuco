@@ -1,47 +1,47 @@
 import React from 'react';
-import { Compass, MapPin, ShoppingBag, Mountain, Target, ShieldCheck, Heart, Sparkles, TrendingUp, Users, ArrowRight } from 'lucide-react';
+import { Compass, MapPin, ShoppingBag, Mountain, ShieldCheck, Heart, Sparkles, TrendingUp, HeartHandshake } from 'lucide-react';
 
 export default function ImpactSection() {
   const pillars = [
     {
       icon: Compass,
       title: '1. Descubre lo Auténtico',
-      desc: 'Accede a un catálogo vivo de atractivos naturales, centros arqueológicos milenarios como Kotosh y joyas culturales ocultas de Huánuco.'
+      desc: 'Explora lugares únicos, desde maravillas naturales hasta centros arqueológicos milenarios como Kotosh y rincones por descubrir.'
     },
     {
       icon: MapPin,
-      title: '2. Rutas a tu Medida',
-      desc: 'Planifica itinerarios personalizados por clima, presupuesto e intereses, desde trekking andino hasta agroturismo en la selva alta.'
+      title: '2. Rutas a tu Ritmo',
+      desc: 'Encuentra y arma itinerarios según tu tiempo y presupuesto: caminatas, rutas del café, gastronomía y paseos en familia.'
     },
     {
       icon: ShoppingBag,
-      title: '3. Impacto Económico Directo',
-      desc: 'Conecta sin intermediarios con artesanos, agricultores y gastronómicos locales. El 100% del beneficio va directo a las familias huanuqueñas.'
+      title: '3. Apoyo Directo a la Economía Local',
+      desc: 'Conéctate sin intermediarios con artesanos, agricultores y productores huanuqueños. Tu consumo beneficia directamente a sus familias.'
     }
   ];
 
   const valueProps = [
     {
       icon: ShieldCheck,
-      title: 'Sin Comisiones ni Intermediarios',
-      desc: 'Fomentamos un canal 100% directo vía WhatsApp. La tarifa negociada es íntegra para el emprendedor.'
+      title: 'Trato Directo y Transparente',
+      desc: 'Te comunicas directo vía WhatsApp con cada emprendedor. Sin cobros de comisión ni costos ocultos.'
     },
     {
       icon: TrendingUp,
-      title: 'Descentralización & Empleo Local',
-      desc: 'Impulsamos la economía en distritos y comunidades rurales, llevando oportunidades donde antes no llegaba la difusión.'
+      title: 'Impulso a Emprendedores',
+      desc: 'Damos visibilidad a MYPES de distritos y comunidades rurales, llevando oportunidades a donde antes no llegaba la difusión.'
     },
     {
       icon: Heart,
-      title: 'Preservación de la Identidad',
-      desc: 'Revalorizamos el hilado tradicional, la cerámica ancestral y la gastronomía típica, asegurando que sigan vivas por generaciones.'
+      title: 'Orgullo e Identidad Local',
+      desc: 'Valoramos el telar tradicional, los cultivos orgánicos y los sabores autóctonos para que nuestras costumbres sigan vivas.'
     }
   ];
 
   return (
     <section id="impacto" className="relative py-20 bg-slate-50 overflow-hidden border-b border-slate-200">
       
-      {/* Topographic Background Graphic Accent */}
+      {/* Background Graphic Accent */}
       <div className="absolute inset-0 topographic-bg opacity-10 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,15 +51,15 @@ export default function ImpactSection() {
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold uppercase tracking-widest border border-emerald-200">
               <Mountain className="w-3.5 h-3.5 text-emerald-700" />
-              CONOCE EL PROYECTO
+              EL PROYECTO
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Transformando el turismo en <span className="text-emerald-700">oportunidad para Huánuco</span>
+              Un puente entre viajeros y el <span className="text-emerald-700">talento de Huánuco</span>
             </h2>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
-              <strong className="text-slate-900">RUTA HCO / Consume Huánuco</strong> nace con una misión clara: democratizar la visibilidad del turismo y conectar directamente a los viajeros con la riqueza cultural, natural y humana de nuestra región.
+              <strong className="text-slate-900">RUTA HCO</strong> es una iniciativa creada para visibilizar lo mejor de nuestra tierra: su gente, sus paisajes y sus emprendimientos.
             </p>
           </div>
 
@@ -72,50 +72,50 @@ export default function ImpactSection() {
               </p>
               <div className="mt-2 text-xs font-extrabold text-emerald-900 uppercase tracking-wider flex items-center justify-center lg:justify-end gap-1">
                 <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                Iniciativa de Impacto Regional
+                Iniciativa Regional
               </div>
             </div>
           </div>
         </div>
 
-        {/* Story & Problem-Solution Block */}
+        {/* Story & Purpose Block */}
         <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border border-slate-200/90 mb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
             <span className="text-xs font-black uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-lg border border-emerald-100">
-              ¿Por qué surge esta propuesta?
+              ¿Por qué nace este proyecto?
             </span>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-snug">
-              Una ventana digital para quienes producen con orgullo huanuqueño
+              Conectar a nuestra gente con nuevas oportunidades
             </h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Huánuco posee una biodiversidad asombrosa —desde la selva alta de Tingo María hasta las alturas andinas de Lauricocha— y una herencia milenaria reflejada en sus tejedores, agricultores de café orgánico y maestros gastronómicos.
+              Huánuco tiene una diversidad única: desde el café de la selva alta en Tingo María hasta la tradición textil y artesanal de nuestras comunidades andinas. Sin embargo, muchos productores y emprendedores locales no contaban con un espacio digital accesible para dar a conocer su trabajo.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Sin embargo, muchos emprendedores locales carecían de canales digitales para mostrar su talento al mundo. RUTA HCO elimina esa barrera reuniendo en un solo lugar la oferta turística y el comercio regional justo.
+              Por eso creamos RUTA HCO: un punto de encuentro sencillo y directo para que visitantes y vecinos puedan descubrir experiencias reales, contactar a los creadores y apoyar el comercio local.
             </p>
           </div>
 
-          {/* Quick Metrics / Differentiators Box */}
+          {/* Commitment Box */}
           <div className="lg:col-span-5 bg-gradient-to-br from-emerald-900 to-teal-950 text-white rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
             <h4 className="text-xl font-bold text-amber-300 border-b border-white/10 pb-3 flex items-center gap-2">
-              <Target className="w-5 h-5" />
-              Nuestra Promesa de Valor
+              <HeartHandshake className="w-5 h-5" />
+              Nuestro Compromiso
             </h4>
             
             <div className="space-y-4 text-xs sm:text-sm">
               <div className="flex items-start gap-3">
                 <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">✓</div>
-                <p><strong className="text-white block">Contacto directo sin intermediarios</strong> Cada perfil enlaza al WhatsApp oficial del emprendedor.</p>
+                <p><strong className="text-white block">Contacto 100% directo</strong> Te comunicas directamente por WhatsApp con el emprendedor.</p>
               </div>
 
               <div className="flex items-start gap-3">
                 <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">✓</div>
-                <p><strong className="text-white block">Fomento del consumo responsable</strong> Promovemos productos locales orgánicos y hechos a mano.</p>
+                <p><strong className="text-white block">Valor a lo hecho a mano</strong> Impulsamos productos locales, artesanías y gastronomía de la región.</p>
               </div>
 
               <div className="flex items-start gap-3">
                 <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">✓</div>
-                <p><strong className="text-white block">Acceso libre para la comunidad</strong> Registro sin costo para artesanos y microempresarios.</p>
+                <p><strong className="text-white block">Plataforma abierta</strong> Registro sin costos ni comisiones para los emprendedores locales.</p>
               </div>
             </div>
           </div>
@@ -125,10 +125,10 @@ export default function ImpactSection() {
         <div className="mb-16">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-              ¿Cómo funciona el modelo de impacto?
+              ¿Cómo aporta al turismo local?
             </h3>
             <p className="text-slate-600 text-sm sm:text-base mt-2">
-              Un ciclo virtuoso donde ganan los viajeros, los productores y la región.
+              Una forma más cercana de viajar, donde cada visita deja un impacto positivo.
             </p>
           </div>
 
@@ -175,21 +175,14 @@ export default function ImpactSection() {
           })}
         </div>
 
-        {/* Final Convincing Quote & Banner Call to Action */}
-        <div className="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-950 text-white rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-2xl relative overflow-hidden">
-          <div className="max-w-3xl mx-auto space-y-4 relative z-10">
-            <span className="inline-block text-xs font-black uppercase tracking-widest text-amber-300 bg-amber-400/10 px-4 py-1.5 rounded-full border border-amber-400/30">
-              UNÁMONOS AL CAMBIO
-            </span>
-
-            <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight">
-              “Huánuco no solo se visita. Se descubre, se apoya y se vive.”
-            </h3>
-
-            <p className="text-emerald-100 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-              Cada elección de compra local transforma vidas de familias huanuqueñas y mantiene vivas nuestras tradiciones. Sé parte activa de este proyecto.
-            </p>
-          </div>
+        {/* Final Convincing Quote (Without container box, in italics) */}
+        <div className="max-w-3xl mx-auto text-center py-6 sm:py-8 space-y-3">
+          <p className="italic text-2xl sm:text-4xl font-extrabold text-slate-900 leading-snug tracking-tight">
+            “Huánuco no solo se visita. Se descubre, se apoya y se vive.”
+          </p>
+          <p className="text-slate-500 text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-medium">
+            Cada elección de compra local apoya a familias huanuqueñas y mantiene viva nuestra cultura.
+          </p>
         </div>
 
       </div>
